@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Spoorthy G S — Network Delivery & Data Engineer</title>
+<meta name="description" content="Spoorthy G S — Network Delivery & Data Engineer at Nokia with 3+ years delivering LTE/5G infrastructure. Power BI, SQL, Python automation specialist."/>
+<meta name="keywords" content="Network Engineer, Data Engineer, Nokia, 5G, LTE, Power BI, SQL, Bengaluru"/>
+<meta property="og:title" content="Spoorthy G S — Network Delivery & Data Engineer"/>
+<meta property="og:description" content="3+ years at Nokia delivering 500+ LTE/5G sites. Power BI dashboards, SQL pipelines, automation specialist."/>
+<meta property="og:type" content="profile"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#0a0b0e;
+  --bg2:#111318;
+  --bg3:#181c24;
+  --bg4:#1f2433;
+  --border:#ffffff0f;
+  --border2:#ffffff18;
+  --text:#e8eaf0;
+  --text2:#9ba3b5;
+  --text3:#5c6478;
+  --accent:#3b82f6;
+  --accent2:#6366f1;
+  --accent3:#22d3ee;
+  --green:#10b981;
+  --amber:#f59e0b;
+  --pink:#ec4899;
+  --grad:linear-gradient(135deg,#3b82f6,#6366f1);
+  --grad2:linear-gradient(135deg,#6366f1,#22d3ee);
+  --font:'Inter',sans-serif;
+  --mono:'JetBrains Mono',monospace;
+  --radius:12px;
+  --radius-lg:20px;
+  --glow:0 0 40px rgba(59,130,246,.12);
+}
+[data-theme="light"]{
+  --bg:#f8f9fc;--bg2:#ffffff;--bg3:#f0f2f7;--bg4:#e4e8f0;
+  --border:#0000000d;--border2:#00000018;
+  --text:#0f1117;--text2:#44505e;--text3:#9ba3b5;
+  --glow:0 4px 24px rgba(99,102,241,.1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;transition:background .3s,color .3s}
+
+/* ─── SCROLLBAR ──────────────────────────────── */
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--bg4);border-radius:4px}
+
+/* ─── NAV ────────────────────────────────────── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between;background:var(--bg)cc;backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:background .3s}
+.nav-logo{font-weight:700;font-size:1.1rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.02em}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:.875rem;color:var(--text2);text-decoration:none;transition:color .2s;font-weight:500}
+.nav-links a:hover{color:var(--text)}
+.nav-actions{display:flex;align-items:center;gap:.75rem}
+.theme-btn{background:none;border:1px solid var(--border2);border-radius:8px;padding:.4rem .6rem;cursor:pointer;color:var(--text2);font-size:1rem;transition:all .2s;line-height:1}
+.theme-btn:hover{border-color:var(--accent);color:var(--accent)}
+.nav-cta{background:var(--grad);color:#fff;border:none;border-radius:8px;padding:.4rem 1rem;font-size:.8rem;font-weight:600;cursor:pointer;text-decoration:none;transition:opacity .2s}
+.nav-cta:hover{opacity:.85}
+.hamburger{display:none;background:none;border:1px solid var(--border2);border-radius:8px;padding:.4rem .5rem;cursor:pointer;color:var(--text);flex-direction:column;gap:4px}
+.hamburger span{display:block;width:18px;height:2px;background:currentColor;border-radius:2px;transition:all .3s}
+
+/* ─── HERO ───────────────────────────────────── */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:100px 2rem 4rem}
+.hero-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:.4}
+.hero-glow1{position:absolute;top:-20%;left:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(59,130,246,.15) 0%,transparent 70%);border-radius:50%;animation:pulse1 8s ease-in-out infinite}
+.hero-glow2{position:absolute;bottom:-10%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(99,102,241,.12) 0%,transparent 70%);border-radius:50%;animation:pulse2 10s ease-in-out infinite}
+.hero-glow3{position:absolute;top:40%;left:60%;width:300px;height:300px;background:radial-gradient(circle,rgba(34,211,238,.08) 0%,transparent 70%);border-radius:50%;animation:pulse1 6s ease-in-out infinite 2s}
+@keyframes pulse1{0%,100%{transform:scale(1);opacity:.8}50%{transform:scale(1.1);opacity:1}}
+@keyframes pulse2{0%,100%{transform:scale(1.05);opacity:.6}50%{transform:scale(.95);opacity:1}}
+.hero-content{position:relative;z-index:1;text-align:center;max-width:800px}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--bg3);border:1px solid var(--border2);border-radius:100px;padding:.35rem 1rem;font-size:.8rem;color:var(--text2);margin-bottom:2rem;animation:fadeUp .6s ease forwards}
+.hero-badge .dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-name{font-size:clamp(2.8rem,6vw,5rem);font-weight:700;letter-spacing:-.04em;line-height:1.05;margin-bottom:.75rem;animation:fadeUp .6s ease .1s both}
+.hero-name span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-title{font-size:clamp(1rem,2vw,1.25rem);color:var(--text2);margin-bottom:1.5rem;font-weight:400;animation:fadeUp .6s ease .2s both}
+.hero-tagline{font-size:clamp(.9rem,1.5vw,1.05rem);color:var(--text2);max-width:560px;margin:0 auto 2.5rem;line-height:1.7;animation:fadeUp .6s ease .3s both}
+.hero-stats{display:flex;justify-content:center;gap:3rem;margin-bottom:2.5rem;animation:fadeUp .6s ease .4s both}
+.stat-item{text-align:center}
+.stat-num{font-size:2rem;font-weight:700;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.1;letter-spacing:-.03em}
+.stat-label{font-size:.75rem;color:var(--text3);margin-top:.2rem;text-transform:uppercase;letter-spacing:.05em}
+.hero-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeUp .6s ease .5s both}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.5rem;border-radius:10px;font-size:.9rem;font-weight:600;cursor:pointer;text-decoration:none;transition:all .2s;border:none;font-family:var(--font)}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 4px 20px rgba(59,130,246,.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(59,130,246,.4)}
+.btn-secondary{background:var(--bg3);border:1px solid var(--border2);color:var(--text)}
+.btn-secondary:hover{border-color:var(--accent);background:var(--bg4);transform:translateY(-2px)}
+.btn-outline{background:transparent;border:1px solid var(--border2);color:var(--text2)}
+.btn-outline:hover{border-color:var(--text2);color:var(--text);transform:translateY(-2px)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+/* ─── SECTIONS ───────────────────────────────── */
+section{padding:6rem 2rem;max-width:1100px;margin:0 auto}
+.section-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);font-weight:600;margin-bottom:.75rem}
+.section-title{font-size:clamp(2rem,4vw,2.75rem);font-weight:700;letter-spacing:-.04em;margin-bottom:1rem;line-height:1.15}
+.section-sub{font-size:1.05rem;color:var(--text2);max-width:560px;line-height:1.7;margin-bottom:3rem}
+.divider{width:100%;height:1px;background:var(--border);margin:0 auto}
+
+/* ─── ABOUT ──────────────────────────────────── */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.about-bio{font-size:1.05rem;color:var(--text2);line-height:1.85}
+.about-bio p{margin-bottom:1.25rem}
+.about-bio strong{color:var(--text)}
+.about-cards{display:flex;flex-direction:column;gap:1rem}
+.info-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem;display:flex;align-items:center;gap:1rem;transition:border-color .2s,box-shadow .2s}
+.info-card:hover{border-color:var(--border2);box-shadow:var(--glow)}
+.info-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0}
+.info-icon.blue{background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.2)}
+.info-icon.purple{background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.2)}
+.info-icon.green{background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.2)}
+.info-icon.amber{background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.2)}
+.info-icon.cyan{background:rgba(34,211,238,.12);border:1px solid rgba(34,211,238,.2)}
+.info-label{font-size:.75rem;color:var(--text3);text-transform:uppercase;letter-spacing:.06em}
+.info-value{font-size:.95rem;font-weight:600;color:var(--text);margin-top:.1rem}
+
+/* ─── SKILLS ─────────────────────────────────── */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem}
+.skill-group{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.75rem;transition:border-color .2s,box-shadow .2s}
+.skill-group:hover{border-color:var(--border2);box-shadow:var(--glow)}
+.sg-header{display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem}
+.sg-icon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.sg-title{font-size:.95rem;font-weight:700;color:var(--text)}
+.sg-sub{font-size:.75rem;color:var(--text3)}
+.skill-tag{display:inline-flex;align-items:center;gap:.35rem;background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:.3rem .65rem;font-size:.775rem;color:var(--text2);margin:.2rem;font-weight:500;transition:all .2s;cursor:default}
+.skill-tag:hover{border-color:var(--accent);color:var(--accent);background:rgba(59,130,246,.05)}
+.skill-tag.expert{border-color:rgba(59,130,246,.3);color:var(--accent);background:rgba(59,130,246,.07)}
+.skill-tag.strong{border-color:rgba(16,185,129,.3);color:var(--green);background:rgba(16,185,129,.07)}
+.skill-tag.good{border-color:rgba(99,102,241,.3);color:var(--accent2);background:rgba(99,102,241,.07)}
+.skill-dot{width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.7}
+
+/* ─── EXPERIENCE ─────────────────────────────── */
+.timeline{position:relative;padding-left:2rem}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--accent),var(--accent2),transparent)}
+.timeline-item{position:relative;margin-bottom:3rem;padding-bottom:3rem;border-bottom:1px solid var(--border)}
+.timeline-item:last-child{border-bottom:none;margin-bottom:0}
+.timeline-dot{position:absolute;left:-2.375rem;top:.25rem;width:12px;height:12px;border-radius:50%;background:var(--grad);box-shadow:0 0 0 3px var(--bg),0 0 0 4px rgba(59,130,246,.4)}
+.tl-header{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1rem}
+.tl-role{font-size:1.2rem;font-weight:700;color:var(--text);letter-spacing:-.02em}
+.tl-company{font-size:.9rem;color:var(--accent);font-weight:600;margin-top:.1rem}
+.tl-period{font-size:.8rem;color:var(--text3);background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:.25rem .75rem;white-space:nowrap;font-family:var(--mono)}
+.tl-location{font-size:.8rem;color:var(--text3);margin-top:.25rem}
+.tl-body{margin-top:1rem}
+.tl-section{margin-bottom:1.25rem}
+.tl-section-title{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text3);font-weight:600;margin-bottom:.6rem}
+.tl-desc{color:var(--text2);font-size:.9rem;line-height:1.7;margin-bottom:.5rem;padding-left:1rem;position:relative}
+.tl-desc::before{content:'→';position:absolute;left:0;color:var(--accent3);opacity:.6}
+.tech-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.75rem}
+.tech-tag{background:rgba(34,211,238,.06);border:1px solid rgba(34,211,238,.2);color:var(--accent3);border-radius:6px;padding:.2rem .6rem;font-size:.75rem;font-family:var(--mono);font-weight:500}
+.achievement-badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.25);color:var(--amber);border-radius:6px;padding:.2rem .65rem;font-size:.775rem;font-weight:600;margin:.2rem}
+
+/* ─── PROJECTS ───────────────────────────────── */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.5rem}
+.project-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;transition:all .3s;display:flex;flex-direction:column;gap:1.25rem;cursor:default}
+.project-card:hover{border-color:var(--border2);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,.3),var(--glow)}
+.pc-header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}
+.pc-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
+.pc-badge{font-size:.7rem;background:var(--bg3);border:1px solid var(--border2);border-radius:20px;padding:.2rem .6rem;color:var(--text3);font-family:var(--mono)}
+.pc-title{font-size:1.1rem;font-weight:700;color:var(--text);letter-spacing:-.02em}
+.pc-org{font-size:.8rem;color:var(--text3);margin-top:.15rem}
+.pc-desc{font-size:.9rem;color:var(--text2);line-height:1.7}
+.pc-metrics{display:flex;gap:.75rem;flex-wrap:wrap}
+.metric-chip{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:.4rem .75rem;display:flex;flex-direction:column;align-items:center;gap:.1rem;min-width:80px}
+.mc-val{font-size:1.1rem;font-weight:700;color:var(--text);letter-spacing:-.03em}
+.mc-lbl{font-size:.65rem;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;text-align:center}
+.pc-stack{display:flex;flex-wrap:wrap;gap:.35rem}
+.stack-tag{background:rgba(99,102,241,.07);border:1px solid rgba(99,102,241,.2);color:var(--accent2);border-radius:5px;padding:.15rem .5rem;font-size:.72rem;font-family:var(--mono)}
+
+/* ─── CERTIFICATIONS ─────────────────────────── */
+.certs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem}
+.cert-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;display:flex;gap:1rem;align-items:flex-start;transition:all .2s}
+.cert-card:hover{border-color:var(--border2);box-shadow:var(--glow);transform:translateY(-2px)}
+.cert-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:justify-content-center;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;background:var(--bg3);border:1px solid var(--border2)}
+.cert-body{flex:1;min-width:0}
+.cert-name{font-size:.92rem;font-weight:700;color:var(--text);line-height:1.3;margin-bottom:.3rem}
+.cert-issuer{font-size:.8rem;color:var(--accent);font-weight:600}
+.cert-date{font-size:.75rem;color:var(--text3);margin-top:.2rem;font-family:var(--mono)}
+.cert-level{font-size:.7rem;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);color:var(--accent);border-radius:4px;padding:.15rem .45rem;display:inline-block;margin-top:.4rem}
+
+/* ─── AWARDS ─────────────────────────────────── */
+.awards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem}
+.award-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;transition:all .2s;position:relative;overflow:hidden}
+.award-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:var(--radius-lg) var(--radius-lg) 0 0}
+.award-card.gold::before{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
+.award-card.silver::before{background:linear-gradient(90deg,#6366f1,#8b5cf6)}
+.award-card.bronze::before{background:linear-gradient(90deg,#10b981,#34d399)}
+.award-card:hover{border-color:var(--border2);transform:translateY(-3px);box-shadow:0 16px 48px rgba(0,0,0,.25)}
+.award-emoji{font-size:2.5rem;margin-bottom:1rem}
+.award-title{font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:.3rem}
+.award-year{font-size:.8rem;color:var(--text3);font-family:var(--mono);margin-bottom:.75rem}
+.award-desc{font-size:.875rem;color:var(--text2);line-height:1.7}
+
+/* ─── CONTACT ────────────────────────────────── */
+.contact-wrap{display:grid;grid-template-columns:1fr 1.3fr;gap:3rem;align-items:start}
+.contact-info{display:flex;flex-direction:column;gap:1rem}
+.contact-link{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem;display:flex;align-items:center;gap:1rem;text-decoration:none;color:var(--text);transition:all .2s}
+.contact-link:hover{border-color:var(--accent);transform:translateX(4px);box-shadow:var(--glow)}
+.cl-icon{width:40px;height:40px;border-radius:9px;background:var(--bg3);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.cl-label{font-size:.75rem;color:var(--text3);margin-bottom:.1rem;text-transform:uppercase;letter-spacing:.06em}
+.cl-value{font-size:.9rem;font-weight:500}
+.contact-form{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem}
+.form-row{margin-bottom:1.25rem}
+.form-label{display:block;font-size:.8rem;font-weight:600;color:var(--text2);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.06em}
+.form-input{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:9px;padding:.75rem 1rem;font-size:.9rem;color:var(--text);font-family:var(--font);transition:border-color .2s,box-shadow .2s;outline:none;-webkit-appearance:none}
+.form-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(59,130,246,.12)}
+.form-input::placeholder{color:var(--text3)}
+textarea.form-input{min-height:130px;resize:vertical;line-height:1.6}
+.form-submit{width:100%;padding:.85rem;font-size:.95rem;font-weight:700;border:none;border-radius:10px;cursor:pointer;background:var(--grad);color:#fff;font-family:var(--font);transition:all .2s;letter-spacing:.02em}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(59,130,246,.35)}
+.form-note{font-size:.75rem;color:var(--text3);margin-top:.75rem;text-align:center}
+
+/* ─── FOOTER ─────────────────────────────────── */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 2rem 2rem;margin-top:4rem}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem}
+.footer-brand{font-size:1.2rem;font-weight:700;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.75rem}
+.footer-tagline{font-size:.85rem;color:var(--text3);line-height:1.6}
+.footer-col-title{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text3);font-weight:700;margin-bottom:1rem}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.footer-links a{font-size:.875rem;color:var(--text2);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--accent)}
+.footer-bottom{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding-top:1.5rem;border-top:1px solid var(--border);flex-wrap:wrap;gap:1rem}
+.footer-copy{font-size:.8rem;color:var(--text3)}
+.footer-socials{display:flex;gap:.75rem}
+.social-btn{width:34px;height:34px;border-radius:8px;background:var(--bg3);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--text2);font-size:.9rem;transition:all .2s}
+.social-btn:hover{border-color:var(--accent);color:var(--accent);background:rgba(59,130,246,.08)}
+
+/* ─── TOAST ──────────────────────────────────── */
+.toast{position:fixed;bottom:2rem;right:2rem;background:var(--bg3);border:1px solid var(--green);color:var(--text);padding:1rem 1.5rem;border-radius:12px;font-size:.9rem;font-weight:500;z-index:999;transform:translateY(80px);opacity:0;transition:all .3s;max-width:320px}
+.toast.show{transform:translateY(0);opacity:1}
+
+/* ─── BACK TO TOP ────────────────────────────── */
+.back-top{position:fixed;bottom:2rem;left:2rem;width:42px;height:42px;background:var(--bg3);border:1px solid var(--border2);border-radius:10px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--text2);font-size:1.1rem;transition:all .2s;z-index:99;opacity:0;pointer-events:none}
+.back-top.visible{opacity:1;pointer-events:all}
+.back-top:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-3px)}
+
+/* ─── PROGRESS BAR ───────────────────────────── */
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:var(--grad);z-index:101;transition:width .1s linear;border-radius:0 3px 3px 0}
+
+/* ─── ANIMATIONS ─────────────────────────────── */
+.fade-in{opacity:0;transform:translateY(32px);transition:opacity .6s ease,transform .6s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+.fade-delay-1{transition-delay:.1s}
+.fade-delay-2{transition-delay:.2s}
+.fade-delay-3{transition-delay:.3s}
+
+/* ─── RESPONSIVE ─────────────────────────────── */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:var(--bg2);border-bottom:1px solid var(--border);padding:1.5rem 2rem;gap:1.25rem}
+  .hamburger{display:flex}
+  .about-grid{grid-template-columns:1fr}
+  .contact-wrap{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr}
+  .hero-stats{gap:1.5rem}
+  .stat-num{font-size:1.5rem}
+  section{padding:4rem 1.25rem}
+}
+</style>
+</head>
+<body data-theme="dark">
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">SGS</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#awards">Awards</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme">☀️</button>
+    <a href="#contact" class="nav-cta">Hire Me</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="hero-glow1"></div>
+    <div class="hero-glow2"></div>
+    <div class="hero-glow3"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      Available for opportunities · Bengaluru, India
+    </div>
+    <h1 class="hero-name">Spoorthy <span>G S</span></h1>
+    <p class="hero-title">Network Delivery & Data Engineer · Nokia</p>
+    <p class="hero-tagline">
+      Delivering 500+ LTE/5G sites across global operators while building the data infrastructure that makes those deployments visible, measurable, and reliable.
+    </p>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">500+</div>
+        <div class="stat-label">Sites Delivered</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3+</div>
+        <div class="stat-label">Years at Nokia</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">40%</div>
+        <div class="stat-label">Reporting Faster</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3×</div>
+        <div class="stat-label">Awards Won</div>
+      </div>
+    </div>
+    <div class="hero-ctas">
+      <a href="#experience" class="btn btn-primary">📡 View Experience</a>
+      <a href="spoorthy_resume.pdf" class="btn btn-secondary" download>⬇ Download Resume</a>
+      <a href="#contact" class="btn btn-outline">✉ Contact Me</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="fade-in">
+    <div class="section-label">Who I Am</div>
+    <h2 class="section-title">Building networks.<br/>Engineering clarity.</h2>
+    <p class="section-sub">A brief look at the professional behind the sites, dashboards, and automation pipelines.</p>
+  </div>
+  <div class="about-grid fade-in">
+    <div class="about-bio">
+      <p>I'm a <strong>DEC Engineer at Nokia</strong> with over three years of hands-on experience delivering critical LTE and 5G infrastructure to some of the world's leading telecom operators — T-Mobile, Verizon, Bharti Airtel, TPG, and Spark.</p>
+      <p>My work sits at the intersection of <strong>network delivery and data engineering</strong>. I don't just validate sites — I build the tools that give project teams real-time visibility into what's been done, what's at risk, and what's next. That means Power BI dashboards, SQL pipelines, Power Automate workflows, and Grafana-based compliance reporting.</p>
+      <p>I was recognised with the <strong>Business Excellence Award 2025</strong> for digitizing Nokia's Health & Safety validation process — cutting audit preparation time by 60% and replacing paper-based forms with a fully digital workflow.</p>
+      <p>I'm a Nokia Level 2 Certified Data Engineer. My technical philosophy is simple: if you're spending time on something repetitive, <strong>automate it</strong>. If you can't measure it, <strong>instrument it</strong>.</p>
+    </div>
+    <div class="about-cards">
+      <div class="info-card">
+        <div class="info-icon blue">📍</div>
+        <div>
+          <div class="info-label">Location</div>
+          <div class="info-value">Bengaluru, Karnataka, India</div>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-icon purple">🏢</div>
+        <div>
+          <div class="info-label">Current Role</div>
+          <div class="info-value">DEC Engineer — Nokia</div>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-icon green">🎓</div>
+        <div>
+          <div class="info-label">Education</div>
+          <div class="info-value">B.E. Computer Science · NMIT, 2022</div>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-icon amber">🌐</div>
+        <div>
+          <div class="info-label">Languages</div>
+          <div class="info-value">Kannada (Native) · English & Hindi (C2)</div>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-icon cyan">📧</div>
+        <div>
+          <div class="info-label">Email</div>
+          <div class="info-value">spoorthy.g.s.14@gmail.com</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="fade-in">
+    <div class="section-label">Capabilities</div>
+    <h2 class="section-title">Skills Matrix</h2>
+    <p class="section-sub">Tools and technologies I work with daily — from RAN infrastructure to data pipelines and automation.</p>
+  </div>
+  <div class="skills-grid fade-in">
+    <div class="skill-group">
+      <div class="sg-header">
+        <div class="sg-icon" style="background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2)">📡</div>
+        <div>
+          <div class="sg-title">Telecom & RAN</div>
+          <div class="sg-sub">Network infrastructure delivery</div>
+        </div>
+      </div>
+      <div>
+        <span class="skill-tag expert"><span class="skill-dot"></span>5G NR</span>
+        <span class="skill-tag expert"><span class="skill-dot"></span>LTE / eNodeB</span>
+        <span class="skill-tag expert"><span class="skill-dot"></span>gNodeB</span>
+        <span class="skill-tag expert"><span class="skill-dot"></span>RAN Integration</span>
+        <span class="skill-tag strong"><span class="skill-dot"></span>Site Acceptance Testing</span>
+        <span class="skill-tag strong"><span class="skill-dot"></span>VSWR Checks</span>
+        <span class="skill-tag strong"><span class="skill-dot"></span>STM Checks</span>
+        <span class="skill-tag strong"><span class="skill-dot"></span>M1 Combiner</span>
+        <span class="skill-tag good"><span class="skill-dot"></span>Indoor LTE</span>
+        <span class="skill-tag good"><span class="skill-dot"></span>MW Integration</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="sg-header">
+        <div class="sg-icon" style="background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.2)">📊</div>
+        <div>
+          <div class="sg-title">Data & Business Intelligence</div>
+          <div class="sg-sub">Dashboards, pipelines & insights</div>
+        </div>
+      </div>
+      <div>
+        <span class="skill-tag expert"><span class="skill-dot"></span>Power BI</span>
+        <span class="skill-tag expert"><span class="skill-dot"></span>DAX</span>
+        <span class="skill-tag expert"><span class="skill-dot"></span>Data Modeling</span>
+        <span class="skill-tag expert"><span class="skill-dot"></span>SQL</span>
+        <span class="skill-tag strong"><span class="skill-dot"></span>Grafana</span>
+        <span class="skill-tag strong"><span class="skill-dot"></span>MS Excel (Advanced)</span>
+        <span class="skill-tag good"><span class="skill-dot"></span>KPI Reporting</span>
+        <span class="skill-tag good"><span class="skill-dot"></span>Data Visualization</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="sg-header">
+        <div class="sg-icon" style="background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2)">⚙️</div>
+        <div>
+          <div class="sg-title">Automation & Scripting</div>
+          <div class="sg-sub">Eliminate manual toil</div>
+        </div>
+      </div>
+      <div>
+        <span class="skill-tag expert"><span class="skill-dot"></span>Power Automate</span>
+        <span class="skill-tag expert"><span class="skill-dot"></span>SQL Pipelines</span>
+        <span class="skill-tag strong"><span class="skill-dot"></span>Python (pandas)</span>
+        <span class="skill-tag strong"><span class="skill-dot"></span>Scripting</span>
+        <span class="skill-tag good"><span class="skill-dot"></span>Workflow Design</span>
+        <span class="skill-tag good"><span class="skill-dot"></span>Data Validation</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="sg-header">
+        <div class="sg-icon" style="background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.2)">🛠️</div>
+        <div>
+          <div class="sg-title">Tools & Platforms</div>
+          <div class="sg-sub">Day-to-day stack</div>
+        </div>
+      </div>
+      <div>
+        <span class="skill-tag expert"><span class="skill-dot"></span>Nokia NetAct</span>
+        <span class="skill-tag expert"><span class="skill-dot"></span>EdenNet</span>
+        <span class="skill-tag expert"><span class="skill-dot"></span>SiteTracker</span>
+        <span class="skill-tag expert"><span class="skill-dot"></span>JIRA</span>
+        <span class="skill-tag strong"><span class="skill-dot"></span>Confluence</span>
+        <span class="skill-tag strong"><span class="skill-dot"></span>Site Acceptance Tools</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="sg-header">
+        <div class="sg-icon" style="background:rgba(236,72,153,.1);border:1px solid rgba(236,72,153,.2)">🔍</div>
+        <div>
+          <div class="sg-title">Quality & Compliance</div>
+          <div class="sg-sub">Audit, validation, HSE</div>
+        </div>
+      </div>
+      <div>
+        <span class="skill-tag expert"><span class="skill-dot"></span>Site Validation</span>
+        <span class="skill-tag expert"><span class="skill-dot"></span>HSE Compliance</span>
+        <span class="skill-tag expert"><span class="skill-dot"></span>Documentation Audits</span>
+        <span class="skill-tag strong"><span class="skill-dot"></span>Photo Audits</span>
+        <span class="skill-tag strong"><span class="skill-dot"></span>Corrective Action</span>
+        <span class="skill-tag good"><span class="skill-dot"></span>SLA Compliance</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="sg-header">
+        <div class="sg-icon" style="background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.2)">🤝</div>
+        <div>
+          <div class="sg-title">Process & Methodology</div>
+          <div class="sg-sub">How I work</div>
+        </div>
+      </div>
+      <div>
+        <span class="skill-tag expert"><span class="skill-dot"></span>Agile / Scrum</span>
+        <span class="skill-tag expert"><span class="skill-dot"></span>Stakeholder Reporting</span>
+        <span class="skill-tag strong"><span class="skill-dot"></span>Traceability</span>
+        <span class="skill-tag strong"><span class="skill-dot"></span>Cross-team Collaboration</span>
+        <span class="skill-tag good"><span class="skill-dot"></span>RF & Field Teams</span>
+        <span class="skill-tag good"><span class="skill-dot"></span>Deployment Planning</span>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:2rem;display:flex;gap:1.5rem;flex-wrap:wrap;align-items:center" class="fade-in">
+    <div style="font-size:.8rem;color:var(--text3)">Proficiency key:</div>
+    <span class="skill-tag expert">Expert — used daily</span>
+    <span class="skill-tag strong">Strong — production experience</span>
+    <span class="skill-tag good">Proficient — project experience</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="fade-in">
+    <div class="section-label">Career</div>
+    <h2 class="section-title">Experience Timeline</h2>
+    <p class="section-sub">3+ years building, validating, and instrumenting telecoms infrastructure at scale.</p>
+  </div>
+  <div class="timeline fade-in">
+
+    <!-- Job 1 -->
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="tl-header">
+        <div>
+          <div class="tl-role">DEC Engineer — Network Delivery & Validation</div>
+          <div class="tl-company">Nokia · Bengaluru, India</div>
+          <div class="tl-location">📍 Bengaluru, Karnataka</div>
+        </div>
+        <div style="text-align:right">
+          <div class="tl-period">Sep 2022 → Present</div>
+          <div style="font-size:.75rem;color:var(--green);margin-top:.4rem">● Active</div>
+        </div>
+      </div>
+      <div class="tl-body">
+        <div class="tl-section">
+          <div class="tl-section-title">Site Delivery & Validation</div>
+          <div class="tl-desc">Validated and delivered 500+ LTE/5G network sites across TPG, Spark, and BHI projects, maintaining 100% documentation compliance and zero audit failures across T-Mobile, Verizon, and Airtel stakeholder reviews.</div>
+          <div class="tl-desc">Owned end-to-end site acceptance for ~100 Spark project sites via photo/document audits, reducing non-conformance flags by 20% quarter-over-quarter.</div>
+          <div class="tl-desc">Delivered 400+ validated sites under BHI, achieving high compliance with deployment timelines and technical standards.</div>
+          <div class="tl-desc">Supported Antina project: indoor LTE validation, STM checks, and M1 combiner commissioning — zero-defect node integration across all assigned sites.</div>
+        </div>
+        <div class="tl-section">
+          <div class="tl-section-title">Data Engineering & BI</div>
+          <div class="tl-desc">Designed and scaled Power BI dashboards (DAX, data modeling) tracking KPIs across 500+ sites and 3 concurrent projects — cutting manual reporting time by 40%.</div>
+          <div class="tl-desc">Built SQL and Power Automate pipelines automating data validation workflows, eliminating 8+ hours/week of manual effort and improving reporting accuracy from ~85% to 99%.</div>
+          <div class="tl-desc">Digitized Health & Safety Process Validation using Grafana and SQL, reducing compliance reporting time by 60% — recognised with the Business Excellence Award 2025.</div>
+        </div>
+        <div class="tl-section">
+          <div class="tl-section-title">Process & Compliance</div>
+          <div class="tl-desc">Performed customer-specific HSE checks under NAM_HSE protocol, ensuring full compliance with safety and quality standards during site rollout.</div>
+          <div class="tl-desc">Maintained comprehensive validation documentation and progress reports through JIRA, ensuring full traceability and project transparency.</div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem">
+          <span class="achievement-badge">🏆 Business Excellence 2025</span>
+          <span class="achievement-badge">⭐ Best Associate 2023</span>
+          <span class="achievement-badge">🌟 Best of All Things 2022</span>
+        </div>
+        <div class="tech-tags">
+          <span class="tech-tag">5G NR</span>
+          <span class="tech-tag">LTE</span>
+          <span class="tech-tag">Power BI</span>
+          <span class="tech-tag">DAX</span>
+          <span class="tech-tag">SQL</span>
+          <span class="tech-tag">Power Automate</span>
+          <span class="tech-tag">Grafana</span>
+          <span class="tech-tag">Nokia NetAct</span>
+          <span class="tech-tag">EdenNet</span>
+          <span class="tech-tag">SiteTracker</span>
+          <span class="tech-tag">JIRA</span>
+          <span class="tech-tag">Python</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Education as timeline item -->
+    <div class="timeline-item">
+      <div class="timeline-dot" style="background:var(--grad2)"></div>
+      <div class="tl-header">
+        <div>
+          <div class="tl-role">Bachelor of Engineering — Computer Science</div>
+          <div class="tl-company">Nitte Meenakshi Institute of Technology</div>
+          <div class="tl-location">📍 Bengaluru, Karnataka</div>
+        </div>
+        <div>
+          <div class="tl-period">2018 → 2022</div>
+        </div>
+      </div>
+      <div class="tl-body">
+        <div class="tl-desc">Graduated with a degree in Computer Science, building foundations in programming, data structures, networks, and systems — directly applicable to telecom and data engineering work.</div>
+        <div class="tech-tags">
+          <span class="tech-tag">Computer Science</span>
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Data Structures</span>
+          <span class="tech-tag">Networks</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="fade-in">
+    <div class="section-label">Built Work</div>
+    <h2 class="section-title">Featured Projects</h2>
+    <p class="section-sub">Data infrastructure and automation tools that delivered measurable business impact.</p>
+  </div>
+  <div class="projects-grid fade-in">
+
+    <div class="project-card">
+      <div class="pc-header">
+        <div class="pc-icon" style="background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2)">📊</div>
+        <div class="pc-badge">Nokia Internal</div>
+      </div>
+      <div>
+        <div class="pc-title">Telecom Delivery KPI Dashboard</div>
+        <div class="pc-org">Nokia · Multi-project visibility platform</div>
+      </div>
+      <div class="pc-desc">
+        Designed and built a multi-project Power BI dashboard tracking 500+ site deliveries across three client networks simultaneously. Replaced three separate Excel-based reporting sheets with a single, unified delivery visibility tool — adopted by project leads as the team standard within weeks of launch.
+        <br/><br/>
+        <strong style="color:var(--text)">Challenge:</strong> Project leads were working from three disconnected Excel sheets with no cross-project visibility. Manual consolidation took hours per cycle.<br/><br/>
+        <strong style="color:var(--text)">Solution:</strong> Built a centralized Power BI dashboard with DAX-driven KPIs, real-time refresh, and cross-project drill-downs. Integrated SQL-based data pipeline for automatic ingestion.
+      </div>
+      <div class="pc-metrics">
+        <div class="metric-chip"><div class="mc-val">40%</div><div class="mc-lbl">Faster Reporting</div></div>
+        <div class="metric-chip"><div class="mc-val">500+</div><div class="mc-lbl">Sites Tracked</div></div>
+        <div class="metric-chip"><div class="mc-val">3</div><div class="mc-lbl">Projects Unified</div></div>
+      </div>
+      <div class="pc-stack">
+        <span class="stack-tag">Power BI</span>
+        <span class="stack-tag">DAX</span>
+        <span class="stack-tag">SQL</span>
+        <span class="stack-tag">Data Modeling</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="pc-header">
+        <div class="pc-icon" style="background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2)">🛡️</div>
+        <div class="pc-badge">🏆 Business Excellence 2025</div>
+      </div>
+      <div>
+        <div class="pc-title">Health & Safety Process Digitization</div>
+        <div class="pc-org">Nokia · HSE Compliance Automation</div>
+      </div>
+      <div class="pc-desc">
+        Redesigned Nokia's Health & Safety validation workflow end-to-end — from paper-based audit forms to a fully digital, automated compliance pipeline. The result was a 60% reduction in compliance reporting time and recognition with the Business Excellence Award 2025.
+        <br/><br/>
+        <strong style="color:var(--text)">Challenge:</strong> Site auditors were spending 5 hours per cycle preparing compliance documentation manually. Paper forms created version control issues and no real-time visibility.<br/><br/>
+        <strong style="color:var(--text)">Solution:</strong> Built digital forms feeding directly into SQL, with Grafana for real-time compliance monitoring and Power Automate for alert routing and approval flows.
+      </div>
+      <div class="pc-metrics">
+        <div class="metric-chip"><div class="mc-val">60%</div><div class="mc-lbl">Time Saved</div></div>
+        <div class="metric-chip"><div class="mc-val">5h→2h</div><div class="mc-lbl">Per Audit Cycle</div></div>
+        <div class="metric-chip"><div class="mc-val">0</div><div class="mc-lbl">Paper Forms</div></div>
+      </div>
+      <div class="pc-stack">
+        <span class="stack-tag">Grafana</span>
+        <span class="stack-tag">SQL</span>
+        <span class="stack-tag">Power Automate</span>
+        <span class="stack-tag">HSE Compliance</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="pc-header">
+        <div class="pc-icon" style="background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.2)">😊</div>
+        <div class="pc-badge">🌟 Best of All Things 2022</div>
+      </div>
+      <div>
+        <div class="pc-title">Customer Satisfaction BI Dashboard</div>
+        <div class="pc-org">Nokia · Organisation-wide Analytics</div>
+      </div>
+      <div class="pc-desc">
+        Built a Power BI Customer Satisfaction Survey dashboard that was adopted organisation-wide, earning the Best of All Things Award 2022 in the first year of joining Nokia. Provided leadership with a clear view of satisfaction trends across global delivery programs.
+      </div>
+      <div class="pc-metrics">
+        <div class="metric-chip"><div class="mc-val">Org</div><div class="mc-lbl">Wide Adoption</div></div>
+        <div class="metric-chip"><div class="mc-val">2022</div><div class="mc-lbl">Award Winner</div></div>
+      </div>
+      <div class="pc-stack">
+        <span class="stack-tag">Power BI</span>
+        <span class="stack-tag">DAX</span>
+        <span class="stack-tag">Survey Analytics</span>
+        <span class="stack-tag">Data Viz</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="pc-header">
+        <div class="pc-icon" style="background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.2)">⚡</div>
+        <div class="pc-badge">Nokia Internal</div>
+      </div>
+      <div>
+        <div class="pc-title">SQL & Power Automate Data Pipeline</div>
+        <div class="pc-org">Nokia · Data Validation Automation</div>
+      </div>
+      <div class="pc-desc">
+        Built end-to-end data validation pipelines using SQL and Power Automate, eliminating 8+ hours per week of manual data handling and improving reporting accuracy from ~85% to 99%. These pipelines now underpin the delivery reporting for multiple active telecom projects.
+      </div>
+      <div class="pc-metrics">
+        <div class="metric-chip"><div class="mc-val">8h+</div><div class="mc-lbl">Saved Weekly</div></div>
+        <div class="metric-chip"><div class="mc-val">85→99%</div><div class="mc-lbl">Accuracy Jump</div></div>
+      </div>
+      <div class="pc-stack">
+        <span class="stack-tag">SQL</span>
+        <span class="stack-tag">Power Automate</span>
+        <span class="stack-tag">Data Pipelines</span>
+        <span class="stack-tag">Validation</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="fade-in">
+    <div class="section-label">Credentials</div>
+    <h2 class="section-title">Certifications</h2>
+    <p class="section-sub">Formally recognised competencies from Nokia's internal certification program and academic institutions.</p>
+  </div>
+  <div class="certs-grid fade-in">
+
+    <div class="cert-card">
+      <div class="cert-icon">🏅</div>
+      <div class="cert-body">
+        <div class="cert-name">Level 2 — Data Engineer</div>
+        <div class="cert-issuer">Nokia</div>
+        <div class="cert-date">📅 July 2025</div>
+        <div class="cert-level">Advanced · Data Pipeline Design & Automation</div>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-icon">📈</div>
+      <div class="cert-body">
+        <div class="cert-name">Level 1 — Data Analyst</div>
+        <div class="cert-issuer">Nokia</div>
+        <div class="cert-date">📅 December 2024</div>
+        <div class="cert-level">Professional · Power BI, DAX & SQL Integration</div>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-icon">🗄️</div>
+      <div class="cert-body">
+        <div class="cert-name">SQL Essential Training</div>
+        <div class="cert-issuer">Nokia</div>
+        <div class="cert-date">📅 June 2024</div>
+        <div class="cert-level">Professional · Database Management & Query Optimization</div>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-icon">📊</div>
+      <div class="cert-body">
+        <div class="cert-name">Power BI Data Modeling with DAX</div>
+        <div class="cert-issuer">Nokia</div>
+        <div class="cert-date">📅 July 2023</div>
+        <div class="cert-level">Professional · Performance Dashboards & Data Insights</div>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-icon">🐍</div>
+      <div class="cert-body">
+        <div class="cert-name">The Joy of Computing Using Python</div>
+        <div class="cert-issuer">NPTEL · IIT</div>
+        <div class="cert-date">📅 December 2020</div>
+        <div class="cert-level">Academic · Programming Fundamentals & Scripting</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- AWARDS -->
+<section id="awards">
+  <div class="fade-in">
+    <div class="section-label">Recognition</div>
+    <h2 class="section-title">Awards & Achievements</h2>
+    <p class="section-sub">Three years, three performance awards — recognition for work that moved the needle on delivery and efficiency.</p>
+  </div>
+  <div class="awards-grid fade-in">
+
+    <div class="award-card gold">
+      <div class="award-emoji">🏆</div>
+      <div class="award-title">Business Excellence Award</div>
+      <div class="award-year">Nokia · 2025</div>
+      <div class="award-desc">Awarded for the end-to-end digitization of Nokia's Health & Safety Process Validation — replacing paper-based audit forms with a fully automated Grafana + SQL pipeline. Reduced compliance reporting overhead by 60% and audit cycle time from 5 hours to 2 hours.</div>
+    </div>
+
+    <div class="award-card silver">
+      <div class="award-emoji">⭐</div>
+      <div class="award-title">Best Associate</div>
+      <div class="award-year">Nokia · 2023</div>
+      <div class="award-desc">Recognised for exceptional contribution to GSD (Global Service Delivery) programs across Nokia's global network. Award reflects consistent high performance in site validation, documentation quality, and cross-team collaboration across multiple concurrent projects.</div>
+    </div>
+
+    <div class="award-card bronze">
+      <div class="award-emoji">🌟</div>
+      <div class="award-title">Best of All Things</div>
+      <div class="award-year">Nokia · 2022</div>
+      <div class="award-desc">Won in the first year at Nokia for building a Power BI Customer Satisfaction Survey dashboard that was adopted organisation-wide. Demonstrated an early ability to translate raw survey data into actionable leadership insights through well-crafted data visualisation.</div>
+    </div>
+
+  </div>
+
+  <!-- Impact metrics bar -->
+  <div style="margin-top:3rem;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:2rem;text-align:center" class="fade-in">
+    <div>
+      <div style="font-size:2.5rem;font-weight:700;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">500+</div>
+      <div style="font-size:.8rem;color:var(--text3);margin-top:.25rem;text-transform:uppercase;letter-spacing:.06em">Network Sites Delivered</div>
+    </div>
+    <div>
+      <div style="font-size:2.5rem;font-weight:700;color:var(--green)">99%</div>
+      <div style="font-size:.8rem;color:var(--text3);margin-top:.25rem;text-transform:uppercase;letter-spacing:.06em">Reporting Accuracy</div>
+    </div>
+    <div>
+      <div style="font-size:2.5rem;font-weight:700;color:var(--amber)">60%</div>
+      <div style="font-size:.8rem;color:var(--text3);margin-top:.25rem;text-transform:uppercase;letter-spacing:.06em">HSE Time Reduction</div>
+    </div>
+    <div>
+      <div style="font-size:2.5rem;font-weight:700;color:var(--accent2)">8h+</div>
+      <div style="font-size:.8rem;color:var(--text3);margin-top:.25rem;text-transform:uppercase;letter-spacing:.06em">Saved Every Week</div>
+    </div>
+    <div>
+      <div style="font-size:2.5rem;font-weight:700;color:var(--accent3)">3×</div>
+      <div style="font-size:.8rem;color:var(--text3);margin-top:.25rem;text-transform:uppercase;letter-spacing:.06em">Performance Awards</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="fade-in">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title">Let's Connect</h2>
+    <p class="section-sub">Open to network engineering, data engineering, BI analyst, and automation roles. Happy to have a conversation.</p>
+  </div>
+  <div class="contact-wrap fade-in">
+    <div class="contact-info">
+      <a href="mailto:spoorthy.g.s.14@gmail.com" class="contact-link">
+        <div class="cl-icon">📧</div>
+        <div>
+          <div class="cl-label">Email</div>
+          <div class="cl-value">spoorthy.g.s.14@gmail.com</div>
+        </div>
+      </a>
+      <a href="tel:+919380394532" class="contact-link">
+        <div class="cl-icon">📱</div>
+        <div>
+          <div class="cl-label">Phone</div>
+          <div class="cl-value">+91 93803 94532</div>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/in/spoorthy-g-s-03860a241/" target="_blank" rel="noopener" class="contact-link">
+        <div class="cl-icon">💼</div>
+        <div>
+          <div class="cl-label">LinkedIn</div>
+          <div class="cl-value">spoorthy-g-s-03860a241</div>
+        </div>
+      </a>
+      <div class="contact-link" style="cursor:default">
+        <div class="cl-icon">📍</div>
+        <div>
+          <div class="cl-label">Location</div>
+          <div class="cl-value">Bengaluru, Karnataka, India</div>
+        </div>
+      </div>
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem;font-size:.85rem;color:var(--text2);line-height:1.7">
+        💡 <strong style="color:var(--text)">Response time:</strong> I typically reply within 24 hours. For urgent opportunities, email is fastest.
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:1.5rem;color:var(--text)">Send a Message</h3>
+      <div class="form-row">
+        <label class="form-label" for="name">Your Name</label>
+        <input class="form-input" type="text" id="name" placeholder="Jane Smith" autocomplete="name"/>
+      </div>
+      <div class="form-row">
+        <label class="form-label" for="email">Email Address</label>
+        <input class="form-input" type="email" id="email" placeholder="jane@company.com" autocomplete="email"/>
+      </div>
+      <div class="form-row">
+        <label class="form-label" for="subject">Subject</label>
+        <input class="form-input" type="text" id="subject" placeholder="Opportunity at Acme Corp"/>
+      </div>
+      <div class="form-row">
+        <label class="form-label" for="message">Message</label>
+        <textarea class="form-input" id="message" placeholder="Tell me about the role or project..."></textarea>
+      </div>
+      <!-- Honeypot -->
+      <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off"/>
+      <button class="form-submit" onclick="handleSubmit()">Send Message →</button>
+      <div class="form-note">This form opens your default email client with the message pre-filled.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Spoorthy G S</div>
+      <p class="footer-tagline">Network Delivery & Data Engineer at Nokia. Building the infrastructure that powers global connectivity — and the data tools that make it visible.</p>
+      <div style="margin-top:1.25rem;display:flex;gap:.5rem">
+        <a href="https://www.linkedin.com/in/spoorthy-g-s-03860a241/" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn">💼</a>
+        <a href="mailto:spoorthy.g.s.14@gmail.com" class="social-btn" aria-label="Email">📧</a>
+        <a href="tel:+919380394532" class="social-btn" aria-label="Phone">📱</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigation</div>
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills Matrix</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#awards">Awards</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Quick Actions</div>
+      <ul class="footer-links">
+        <li><a href="spoorthy_resume.pdf" download>⬇ Download Resume (PDF)</a></li>
+        <li><a href="mailto:spoorthy.g.s.14@gmail.com">📧 Send Email</a></li>
+        <li><a href="https://www.linkedin.com/in/spoorthy-g-s-03860a241/" target="_blank" rel="noopener">💼 View LinkedIn</a></li>
+        <li><a href="#" onclick="window.print();return false">🖨 Print Portfolio</a></li>
+      </ul>
+      <div style="margin-top:1.5rem;background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.2);border-radius:10px;padding:1rem;font-size:.8rem;color:var(--text2);line-height:1.6">
+        <span style="color:var(--green);font-weight:600">● Open to opportunities</span><br/>
+        Available for full-time roles in network engineering, data engineering, or BI — Bengaluru or remote.
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Spoorthy G S · Built with care · Bengaluru, India</div>
+    <div class="footer-socials">
+      <a href="https://www.linkedin.com/in/spoorthy-g-s-03860a241/" class="social-btn" target="_blank" rel="noopener" aria-label="LinkedIn">💼</a>
+      <a href="mailto:spoorthy.g.s.14@gmail.com" class="social-btn" aria-label="Email">📧</a>
+    </div>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+<!-- BACK TO TOP -->
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+<script>
+// Theme toggle
+const themeBtn=document.getElementById('themeBtn');
+const body=document.body;
+let isDark=true;
+themeBtn.onclick=()=>{
+  isDark=!isDark;
+  body.setAttribute('data-theme',isDark?'dark':'light');
+  themeBtn.textContent=isDark?'☀️':'🌙';
+};
+
+// Hamburger
+const hamburger=document.getElementById('hamburger');
+const navLinks=document.getElementById('navLinks');
+hamburger.onclick=()=>navLinks.classList.toggle('open');
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+
+// Progress bar
+const progressBar=document.getElementById('progressBar');
+window.addEventListener('scroll',()=>{
+  const pct=window.scrollY/(document.documentElement.scrollHeight-window.innerHeight)*100;
+  progressBar.style.width=pct+'%';
+  const backTop=document.getElementById('backTop');
+  backTop.classList.toggle('visible',window.scrollY>400);
+});
+
+// Intersection Observer for fade-in
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}
+  });
+},{threshold:.1});
+document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+
+// Toast helper
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),3500);
+}
+
+// Contact form handler
+function handleSubmit(){
+  const name=document.getElementById('name').value.trim();
+  const email=document.getElementById('email').value.trim();
+  const subject=document.getElementById('subject').value.trim();
+  const message=document.getElementById('message').value.trim();
+  if(!name||!email||!message){
+    showToast('⚠️ Please fill in name, email, and message.');return;
+  }
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+    showToast('⚠️ Please enter a valid email address.');return;
+  }
+  const mailto=`mailto:spoorthy.g.s.14@gmail.com?subject=${encodeURIComponent(subject||'Portfolio Enquiry — '+name)}&body=${encodeURIComponent('Hi Spoorthy,\n\nMy name is '+name+' ('+email+').\n\n'+message+'\n\nBest regards,\n'+name)}`;
+  window.location.href=mailto;
+  showToast('✅ Opening your email client...');
+}
+
+// Keyboard: Enter on form inputs
+document.querySelectorAll('.form-input').forEach(input=>{
+  input.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey&&input.tagName!=='TEXTAREA')handleSubmit()});
+});
+</script>
+</body>
+</html>
